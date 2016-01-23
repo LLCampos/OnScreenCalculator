@@ -32,6 +32,7 @@ $(".number-btn").on('click', function() {
         $('#number-on-screen').text(n2);
     }
     $('#operator-on-screen').text('');
+
 });
 
 $(".operation-btn").on('click', function() {
@@ -58,9 +59,14 @@ $(".equal-btn").on('click', function() {
             break;
     }
 
-    $('#number-on-screen').text(result);
+    if ((n1 == "310394" && n2 == "090293") || (n1 == "090293" && n2 == "310394"))  {
+        $('#number-on-screen').text('Amo-te!')
+    } else {
+        $('#number-on-screen').text(result);
+    }
+
     $('#operator-on-screen').text('=');
-    clear()
+    clear();
 });
 
 $('.clear-btn').on('click', function() {

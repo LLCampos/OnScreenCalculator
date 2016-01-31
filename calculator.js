@@ -1,26 +1,26 @@
 var add = function(n1, n2) {
     return n1 + n2;
-}
+};
 
 var multiply = function(n1, n2) {
     return n1 * n2;
-}
+};
 
 var subtract = function(n1, n2) {
     return n1 - n2;
-}
+};
 
 var divide = function(n1, n2) {
     return n1 / n2;
-}
+};
 
 var clear = function() {
     n1 = '';
     n2 = '';
     operator = '';
-}
+};
 
-clear()
+clear();
 
 $(".number-btn").on('click', function() {
     n = $(this).text();
@@ -44,23 +44,26 @@ $(".equal-btn").on('click', function() {
     n1 = Number(n1);
     n2 = Number(n2);
 
+    var result = "";
+
     switch (operator) {
         case '+':
-            var result = (add(n1, n2)).toString();
+            result = (add(n1, n2)).toString();
             break;
         case '-':
-            var result = (subtract(n1,n2)).toString();
+            result = (subtract(n1,n2)).toString();
             break;
         case '*':
-            var result = (multiply(n1, n2)).toString();
+            result = (multiply(n1, n2)).toString();
             break;
         case '/':
-            var result = (divide(n1, n2)).toString();
+            result = (divide(n1, n2)).toString();
             break;
     }
 
+    // an easter egg for my girlfriend
     if ((n1 == "310394" && n2 == "090293") || (n1 == "090293" && n2 == "310394"))  {
-        $('#number-on-screen').text('Amo-te!')
+        $('#number-on-screen').text('Amo-te!');
     } else {
         $('#number-on-screen').text(result);
     }
@@ -70,7 +73,7 @@ $(".equal-btn").on('click', function() {
 });
 
 $('.clear-btn').on('click', function() {
-    clear()
+    clear();
     $('#number-on-screen').text('0');
     $('#operator-on-screen').text('');
 });
